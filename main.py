@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
 import requests
-from . import db
+# from . import db
 main = Blueprint('main', __name__)
 auth = Blueprint('main', __name__)
 
@@ -49,9 +49,9 @@ def results():
 	}
 	r = requests.get('https://newsapi.org/v2/top-headlines?', params=params)
 	content = r.json()
-	
+
 	if content['articles'] == []:
 		return "<h1>BRUH</h1>"
-	
+
 	article_list = content['articles']
 	return render_template("search-result.html", article_list= article_list)
