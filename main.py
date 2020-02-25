@@ -55,3 +55,8 @@ def results():
 
 	article_list = content['articles']
 	return render_template("search-result.html", article_list= article_list)
+
+
+
+if __name__ == "__main__":
+    main.run(debug=True)
