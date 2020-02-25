@@ -1,18 +1,60 @@
-<Title>Choose your News Sources</Title>
-<form action="/search-result" method= "post">
-    <div>
-        <label for="news_source1"> Washington Post</label><br>
-        <input type="checkbox" name="news_source" value=  "the-washington-post">
-        <label for="news_source2">BBC</label><br>
-        <input type="checkbox" name="news_source" value = "bbc-news">
-        <label for="news_source3"> Fox News ;)</label><br>
-        <input type="checkbox" name="news_source" value=  "fox-news">
-        <label for="news_source4"> NYMagazine</label><br>
-        <input type="checkbox" name="news_source" value=  "new-york-magazine">
-        <label for="news_source5"> </label>The Huffington Post<br>
-        <input type="checkbox" name="news_source" value = "the-huffington-post">
-        <input type="text"     name="keyword"  placeholder="search a keyword"/>
-    </div>
-​
-    <button type="submit" method="POST">Search</button>
-</form>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column">
+    <h1 for="news_source1" class="display-3"> Get the quality news that matters<br> matters to you</h1>
+</div>
+
+<div class="column">
+
+    <form action="/search-result" method= "post">
+        <input style="width: 40%" class="p-2" type="text"     name="keyword"  placeholder="search a keyword"/>
+        ​
+
+        <div class="row mt-5 p-0">
+            <div class="col-sm">
+                <!-- <label for="news_source1"> Washington Post</label><br> -->
+                <img src="https://icons.iconarchive.com/icons/martz90/circle/512/bbc-news-icon.png" width="50%" height="50%" alt=" bbc news ">
+                <div class="p-2">
+                    <input type="checkbox" name="news_source" value=  "the-washington-post">
+                </div>
+
+            </div>
+            <div class="col-sm">
+                <img src="https://www.beabetterguide.com/wordpress/wp-content/uploads/2013/11/FOX-News-Icon.png" width="50%" height="50%" alt="fox news">
+                <div class="p-2">
+                    <input type="checkbox" name="news_source" value=  "fox-news">
+                </div>
+
+            </div>
+            <div class="col-sm">
+                <img src="https://assets.nymag.com/media/sites/nymag/icon.1500x1500.png" width="50%" height="50%" alt=" ny magazine ">
+                <div class="p-2">
+                    <input type="checkbox" name="news_source" value=  "new-york-magazine">
+                </div>
+
+
+            </div>
+            <div class="/signup" >
+                <img src="https://ravvz4at1t113ep6n1ofrn61-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/huffington-post-logo.png" width="50%" height="50%" alt=" huffington post ">
+                <div class="p-2">
+                    <input type="checkbox" name="news_source" value = "the-huffington-post">
+                </div>
+            </div>
+
+        </div>
+
+        <button class=" pt-2 pr-3 pl-3 pb-2  m-1  w-45" type="submit" method="POST">Search</button>
+    </form>
+
+</div>
+
+
+<!-- <div class="column"> -->
+<!-- <div class="container"> -->
+
+<!-- </div> -->
+<!-- </div> -->
+
+{% endblock %}

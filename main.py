@@ -53,11 +53,20 @@ def results():
 	r = requests.get('https://newsapi.org/v2/top-headlines?', params=params)
 	content = r.json()
 
+	# print(content)
+
 	if content['articles'] == []:
 		return "<h1>BRUH</h1>"
 
 	article_list = content['articles']
 	return render_template("search-result.html", article_list= article_list)
+
+@app.template_filter('formatdatetime')
+def format_datetime(value, format="%d %b %Y %I:%M %p"):
+    """Format a date time to (Default): d Mon YYYY HH:MM P"""
+    if value is None:
+        return ""
+    return value.strftime(format)
 
 
 

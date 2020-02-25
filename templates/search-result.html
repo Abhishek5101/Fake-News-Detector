@@ -1,10 +1,24 @@
-<div class="row">
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
     {% for article in article_list %}
-​
-        <h1>Source: {{article['source']['name']}}</h1>
-        <h1>Title: {{article['title']}}</h1>
-        <h2>Description:{{article['description']}}</h2>
-​
+
+    <div class="card m-2" style="width: 18rem;">
+        <img class="card-img-top" src="{{article['urlToImage']}}" alt="Card image cap">
+        <div class="card-body">
+            <small class="text-left">{{article['publishedAt']}}</small>
+            <h5 class="card-title">{{article['title']}}</h5>
+            <p class="card-text text-left">{{article['description']}}</p>
+            <a href="{{article['url']}}" class="btn btn-success text-white">{{article['source']['name']}}</a>
+        </div>
     </div>
+
     {% endfor %}
+
+
 </div>
+
+{% endblock %}
