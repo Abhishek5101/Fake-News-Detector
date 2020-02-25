@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, Flask
 from flask_login import login_required, current_user
 import requests
 # from . import db
@@ -6,33 +6,36 @@ main = Blueprint('main', __name__)
 auth = Blueprint('main', __name__)
 
 
-@main.route('/')
+app = Flask(__name__)
+
+
+@app.route('/')
 def index():
 	return render_template('index.html')
 
 
-@main.route('/profile')
+@app.route('/profile')
 @login_required
 def profile():
 	return render_template('profile.html', name=current_user.name)
 
 
-@auth.route('/login')
+@app.route('/login')
 def login():
 	return render_template('login.html')
 
 
-@auth.route('/signup')
+@app.route('/signup')
 def signup():
 	return render_template('signup.html')
 
 
-@main.route('/news-sources')
+@app.route('/news-sources')
 def source():
 	return render_template("news-sources.html")
 
 
-@main.route('/search-result', methods=["POST"])
+@app.route('/search-result', methods=["POST"])
 def results():
 	source_list = request.form.getlist("news_source")
 	sources = ""
@@ -59,4 +62,4 @@ def results():
 
 
 if __name__ == "__main__":
-    main.run(debug=True)
+    app.run(debug=True)
