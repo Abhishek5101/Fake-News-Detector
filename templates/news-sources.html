@@ -1,0 +1,18 @@
+<Title>Choose your News Sources</Title>
+<form action="/search-result" method= "post">
+    <div>
+        <label for="news_source1"> Washington Post</label><br>
+        <input type="checkbox" name="news_source" value=  "the-washington-post">
+        <label for="news_source2">BBC</label><br>
+        <input type="checkbox" name="news_source" value = "bbc-news">
+        <label for="news_source3"> Fox News ;)</label><br>
+        <input type="checkbox" name="news_source" value=  "fox-news">
+        <label for="news_source4"> NYMagazine</label><br>
+        <input type="checkbox" name="news_source" value=  "new-york-magazine">
+        <label for="news_source5"> </label>The Huffington Post<br>
+        <input type="checkbox" name="news_source" value = "the-huffington-post">
+        <input type="text"     name="keyword"  placeholder="search a keyword"/>
+    </div>
+​
+    <button type="submit" method="POST">Search</button>
+</form>

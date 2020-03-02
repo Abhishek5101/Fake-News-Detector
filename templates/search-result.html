@@ -1,0 +1,10 @@
+<div class="row">
+    {% for article in article_list %}
+​
+        <h1>Source: {{article['source']['name']}}</h1>
+        <h1>Title: {{article['title']}}</h1>
+        <h2>Description:{{article['description']}}</h2>
+​
+    </div>
+    {% endfor %}
+</div>
