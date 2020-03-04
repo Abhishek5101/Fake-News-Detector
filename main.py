@@ -14,6 +14,11 @@ def index():
 	return render_template('index.html')
 
 
+@app.route('/search')
+def search():
+	return render_template('news-sources.html')
+
+
 @app.route('/profile')
 @login_required
 def profile():
@@ -62,7 +67,7 @@ def results():
 	return render_template("search-result.html", article_list= article_list)
 
 @app.template_filter('formatdatetime')
-def format_datetime(value, format="%d %b %Y %I:%M %p"):
+def format_datetime(value, format="%d %b %Y "):
     """Format a date time to (Default): d Mon YYYY HH:MM P"""
     if value is None:
         return ""
