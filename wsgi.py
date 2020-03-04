@@ -1,3 +1,3 @@
-from . import create_app
+from newsaggregator import create_app
 
 app = create_app()
